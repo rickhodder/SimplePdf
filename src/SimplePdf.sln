@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePdf.Lib", "SimplePdf.Lib\SimplePdf.Lib.csproj", "{88A8FB0C-C778-48DF-AEC4-3849401DF8B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePdf.Lib.Tests", "SimplePdf.Lib.Tests\SimplePdf.Lib.Tests.csproj", "{C4A1609E-106B-4478-A8DC-761EEA53DAC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePdf.Common", "SimplePdf.Common\SimplePdf.Common.csproj", "{FDF2EBD4-8A7E-4DC2-A1A1-B042C3CC6A4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{88A8FB0C-C778-48DF-AEC4-3849401DF8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88A8FB0C-C778-48DF-AEC4-3849401DF8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88A8FB0C-C778-48DF-AEC4-3849401DF8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A1609E-106B-4478-A8DC-761EEA53DAC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4A1609E-106B-4478-A8DC-761EEA53DAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4A1609E-106B-4478-A8DC-761EEA53DAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4A1609E-106B-4478-A8DC-761EEA53DAC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDF2EBD4-8A7E-4DC2-A1A1-B042C3CC6A4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF2EBD4-8A7E-4DC2-A1A1-B042C3CC6A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF2EBD4-8A7E-4DC2-A1A1-B042C3CC6A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF2EBD4-8A7E-4DC2-A1A1-B042C3CC6A4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

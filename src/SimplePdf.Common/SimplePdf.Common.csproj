@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{88A8FB0C-C778-48DF-AEC4-3849401DF8B3}</ProjectGuid>
+    <ProjectGuid>{FDF2EBD4-8A7E-4DC2-A1A1-B042C3CC6A4D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimplePdf.Lib</RootNamespace>
-    <AssemblyName>SimplePdf.Lib</AssemblyName>
+    <RootNamespace>SimplePdf.Common</RootNamespace>
+    <AssemblyName>SimplePdf.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,24 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractSimpleDocument.cs" />
-    <Compile Include="DocumentGenerationResult.cs" />
-    <Compile Include="ISimpleDocument.cs" />
-    <Compile Include="ISimpleDocumentOptions.cs" />
+    <Compile Include="IOptions.cs" />
+    <Compile Include="IResults.cs" />
+    <Compile Include="ISomething.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleDocumentOptions.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Proto.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SimplePdf.Common\SimplePdf.Common.csproj">
-      <Project>{FDF2EBD4-8A7E-4DC2-A1A1-B042C3CC6A4D}</Project>
-      <Name>SimplePdf.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
