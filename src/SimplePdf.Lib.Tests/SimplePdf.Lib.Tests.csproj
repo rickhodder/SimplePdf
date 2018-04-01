@@ -36,6 +36,9 @@
     <Reference Include="FluentAssertions, Version=5.2.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentAssertions.5.2.0\lib\net45\FluentAssertions.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
@@ -62,6 +65,10 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimplePdf.Common\SimplePdf.Common.csproj">
+      <Project>{FDF2EBD4-8A7E-4DC2-A1A1-B042C3CC6A4D}</Project>
+      <Name>SimplePdf.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimplePdf.Lib\SimplePdf.Lib.csproj">
       <Project>{88A8FB0C-C778-48DF-AEC4-3849401DF8B3}</Project>
       <Name>SimplePdf.Lib</Name>

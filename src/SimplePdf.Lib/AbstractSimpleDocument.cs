@@ -1,50 +1,49 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SimplePdf.Lib
 {
-
     public abstract class AbstractSimpleDocument<TDocumentOptions> : ISimpleDocument<TDocumentOptions>
         where TDocumentOptions : ISimpleDocumentOptions
     {
         public TDocumentOptions Options { get; set; }
+        public SimpleDocumentContext<TDocumentOptions> Context { get; set; }
 
         protected AbstractSimpleDocument(TDocumentOptions options)
         {
             Options = options;
+            CreateDocumentContext();
+        }
+
+        protected void CreateDocumentContext()
+        {
+            Context=new SimpleDocumentContext<TDocumentOptions>(Options);
         }
 
         public DocumentGenerationResult Execute()
         {
-            var generationResult =
-                new DocumentGenerationResult(Options.CreateOutputStream());
-
-            generationResult.TextSharpDocument.SetPageSize(Options.PageLayout);
-
-            //var writer = generationResult.CreatePdfWriter();
+            Context.TextSharpDocument.SetPageSize(Options.PageLayout);
 
             if (Options.PageEventHelper != null)
             {
-                generationResult.Writer.PageEvent = Options.PageEventHelper;
+                Context.Writer.PageEvent = Options.PageEventHelper;
             }
 
             if (Options.AutoOpenDocument)
             {
-                generationResult.TextSharpDocument.Open();
+                Context.TextSharpDocument.Open();
             }
 
-            Generate(generationResult);
+            var generationResult = Generate();
 
             if (generationResult.Success && Options.AutoCloseDocument)
             {
-                generationResult.TextSharpDocument.Close();
+                Context.TextSharpDocument.Close();
             }
 
             return generationResult;
         }
 
-        protected abstract void Generate(DocumentGenerationResult result);
+        protected abstract DocumentGenerationResult Generate();
     }
 }

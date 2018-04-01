@@ -12,18 +12,10 @@ namespace SimplePdf.Lib
 {
     public class DocumentGenerationResult : IResults
     {
-        public DocumentGenerationResult(Stream output)
+        public DocumentGenerationResult()
         {
-            Output = output;
-            TextSharpDocument = new Document();
-            Writer = PdfWriter.GetInstance(TextSharpDocument, Output);
         }
 
-        public PdfWriter Writer { get; set; }
-
-        public Document TextSharpDocument { get; set; }
-
-        public Stream Output { get; set; }
         public bool Success { get; set; }
         public List<string> Messages { get; set; } = new List<string>();
         public List<string> Errors { get; set; } = new List<string>();
