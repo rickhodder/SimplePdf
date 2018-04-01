@@ -2,7 +2,7 @@
 
 namespace SimplePdf.Lib
 {
-    public interface ISimpleDocument<TDocumentOptions> : ISomething<ISimpleDocumentOptions> where TDocumentOptions: ISimpleDocumentOptions
+    public interface ISimpleDocument<TDocumentOptions> : ISomethingWithOptions<ISimpleDocumentOptions> where TDocumentOptions: ISimpleDocumentOptions
     {
         TDocumentOptions Options { get; set; }
         DocumentGenerationResult Execute();

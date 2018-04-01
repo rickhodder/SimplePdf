@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="IOptions.cs" />
     <Compile Include="IResults.cs" />
-    <Compile Include="ISomething.cs" />
+    <Compile Include="ISomethingWithOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
