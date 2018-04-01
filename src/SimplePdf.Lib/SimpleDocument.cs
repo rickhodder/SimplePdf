@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace SimplePdf.Lib
 {
-    public abstract class AbstractSimpleDocument<TDocumentOptions> : ISimpleDocument<TDocumentOptions>
+    public abstract class SimpleDocument<TDocumentOptions> : ISimpleDocument<TDocumentOptions>
         where TDocumentOptions : ISimpleDocumentOptions
     {
         public TDocumentOptions Options { get; set; }
         public SimpleDocumentContext<TDocumentOptions> Context { get; set; }
 
-        protected AbstractSimpleDocument(TDocumentOptions options)
+        protected SimpleDocument(TDocumentOptions options)
         {
             Options = options;
             CreateDocumentContext();

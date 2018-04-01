@@ -45,9 +45,10 @@ namespace SimplePdf.Lib.Tests
 
     public class ExpenseDocumentOptions : SimpleDocumentOptions
     {
+        public string Message { get; set; }
     }
 
-    public class ExpenseDocument : AbstractSimpleDocument<ExpenseDocumentOptions>
+    public class ExpenseDocument : SimpleDocument<ExpenseDocumentOptions>
     {
         public ExpenseDocument(ExpenseDocumentOptions options) : base(options)
         {
@@ -60,7 +61,7 @@ namespace SimplePdf.Lib.Tests
             Context.TextSharpDocument.Add(
                 new Paragraph
                 {
-                    "Expense Document"
+                    Options.Message
                 });
             result.Success = true;
             return result;
