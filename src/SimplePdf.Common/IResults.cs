@@ -2,6 +2,7 @@
 
 namespace SimplePdf.Common
 {
+    // Anything that can be a results class
     public interface IResults
     {
         bool Success { get; set; }
