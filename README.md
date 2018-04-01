@@ -12,10 +12,12 @@ First a document class with an options class is instantiated
 ``` c#
 var pdfFileName = Path.Combine(Environment.CurrentDirectory, "expensereport.pdf");
 
-var pdf = new ExpenseDocument(new ExpenseDocumentOptions
-{
-    CreateOutputStream = ()=> File.Create(pdfFileName)
-});
+var pdf = new ExpenseDocument(
+                                new ExpenseDocumentOptions
+                                {
+                                    Message="Here are your expenses",
+                                    CreateOutputStream = ()=> File.Create(pdfFileName)
+                                });
 
 var result = pdf.Execute();
 
@@ -33,6 +35,8 @@ else
 
 public class ExpenseDocumentOptions : SimpleDocumentOptions
 {
+    // message to show in pdf
+    public string Message {get;set;}
 }
 
 public class ExpenseDocument : AbstractSimpleDocument<ExpenseDocumentOptions>
@@ -46,7 +50,7 @@ public class ExpenseDocument : AbstractSimpleDocument<ExpenseDocumentOptions>
         Context.TextSharpDocument.Add(
             new Paragraph
             {
-                "Expense Document"
+                Options.Message
             });
         result.Success = true;
         return result;
